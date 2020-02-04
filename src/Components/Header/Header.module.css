@@ -1,0 +1,19 @@
+.header {
+    grid-area: h;
+    background-color: #212121;
+
+}
+
+.logo {
+margin-left: 100px;
+}
+
+.logo img {
+    width: 70px;
+}
+
+.logo span {
+    color: white;
+    margin-left: 15px;
+    font-size: 35px;
+}

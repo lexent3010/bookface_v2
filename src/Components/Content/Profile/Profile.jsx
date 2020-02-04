@@ -29,5 +29,5 @@ const Profile = (props) => {
         </div>
     )
 };
-
+/*{s.profilePage}*/
 export default Profile;
