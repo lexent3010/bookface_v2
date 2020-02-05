@@ -3,17 +3,13 @@
     background-color: #343434;
     display: grid;
     grid-template-columns: 8fr 2fr;
-    padding: 0 10px 0 10px;
 }
 
 .menu {
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .menu a {
     text-decoration: none;
     color: white;
-}
-.menu a.activeLink {
-    color: gold;
 }

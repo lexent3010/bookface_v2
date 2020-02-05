@@ -5,8 +5,6 @@ import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Content/Profile/Profile";
 import Footer from "./Components/Footer/Footer";
 import Background from "./Components/Background";
-import Messages from "./Components/Content/Messages/Messages";
-import {Route} from "react-router-dom";
 
 const App = (props) => {
   return (
@@ -14,8 +12,7 @@ const App = (props) => {
       <Header/>
       <Navbar/>
         <div className="content">
-            <Route path='/profile' component={Profile} />
-            <Route path='/dialogs' component={Messages}/>
+            <Profile/>
         </div>
         <div className="background">
             <Background/>
