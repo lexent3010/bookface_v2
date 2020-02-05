@@ -1,3 +1,69 @@
+.profilePage {
+    padding: 20px;
+    display: grid;
+    /*justify-content: center;*/
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-rows: 2fr 1fr 1fr 3fr;
+    grid-template-areas:
+            "pi pi pi"
+            "av pf pj"
+            "ph ph ph"
+            "po po po";
+    grid-gap: 20px;
+}
+
+.profileImgBlock {
+    grid-area: pi;
+}
+
 .profileImgBlock img {
-    width: 1200px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.avatarBlock {
+    grid-area: av;
+    background-color: white;
+}
+
+.avatar {
+
+}
+
+.avatar img {
+    height: 150px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+
+.profileBlock {
+    grid-area: pf;
+    background-color: white;
+}
+
+.projectsBlock {
+    grid-area: pj;
+    background-color: white;
+}
+
+.photoBlock {
+    grid-area: ph;
+    background-color: white;
+}
+
+.postsBlock {
+    grid-area: po;
+    background-color: white;
+    justify-self: center;
+    width: 50%;
+}
+
+.block {
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.name {
+    text-align: center;
 }

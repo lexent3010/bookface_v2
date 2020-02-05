@@ -5,8 +5,8 @@ const Header = (props) => {
     return (
         <div className={s.header}>
             <div className={s.logo}>
-                <img src="https://i.ibb.co/vZgVKRd/bf-logo.png" alt="logo"/>
-                <span>BookFace</span>
+                <img src="https://i.ibb.co/Hx4qhXZ/VR-Group-logo-svg.png" alt="logo"/>
+                <span>VReacte</span>
             </div>
         </div>
     )

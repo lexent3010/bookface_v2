@@ -1,7 +1,15 @@
 .navbar {
     grid-area: n;
-    background-color: white;
+    background-color: #343434;
     display: grid;
     grid-template-columns: 8fr 2fr;
+}
 
+.menu {
+    padding-top: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
 }

@@ -1,30 +1,32 @@
 import React from 'react';
 import s from './Profile.module.css'
+import AvatarBlock from "./AvatarBlock/AvatarBlock";
+import PhotoBlock from "./PhotoBlock/PhotoBlock";
+import PostsBlock from "./PostsBlock/PostsBlock";
+import ProfileBlock from "./ProfileBlock/ProfileBlock";
+import ProfileImgBlock from "./ProfileImgBlock/ProfileImgBlock";
+import ProjectsBlock from "./ProjectBlock/ProjectsBlock";
 
 const Profile = (props) => {
     return (
         <div className={s.profilePage}>
             <div className={s.profileImgBlock}>
-                <img src="https://i.ibb.co/st5tL86/profile-Img.png" alt="profile img"/>
+               <ProfileImgBlock/>
             </div>
-            <div className={s.avatarBlock}>
-                <div className={s.avatar}>
-                    <img src="https://i.ibb.co/HVT225d/fwd9e.jpg" alt="avatar"/>
-                </div>
+            <div className={s.avatarBlock + ' ' + s.block}>
+                <AvatarBlock/>
             </div>
-            <div className={s.profileBlock}>
-                <div className={s.profile}>
-                    profile
-                </div>
+            <div className={s.profileBlock + ' ' + s.block}>
+                <ProfileBlock/>
             </div>
-            <div className={s.projectsBlock}>
-                <div>projects</div>
+            <div className={s.projectsBlock + ' ' + s.block}>
+                <ProjectsBlock/>
             </div>
-            <div className={s.photoBlock}>
-                photo
+            <div className={s.photoBlock + ' ' + s.block}>
+                <PhotoBlock/>
             </div>
-            <div className={s.postsBlock}>
-                posts
+            <div className={s.postsBlock + ' ' + s.block}>
+                <PostsBlock/>
             </div>
         </div>
     )
