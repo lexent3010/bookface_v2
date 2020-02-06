@@ -4,15 +4,27 @@ import Post from "./Post/Post";
 
 
 const PostsBlock = (props) => {
+
+    let posts = [
+        {id:1, postText:'Hello world!', likeCount:3},
+        {id:2, postText:'This is new social network!', likeCount:5}
+    ];
+
+    let postData =
+        posts.map((p) => <Post id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
+
     return (
-        <div>
+        <div className={s.postBlock}>
             <div className={s.textarea}>
-                <textarea name="" placeholder={"Add post"} cols="70" rows="10"></textarea>
-                <button>Add post</button>
+                <textarea name="" placeholder={"How are you?"} cols="66" rows="5"></textarea>
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
             <div>
-                <Post postText="Hello world!"/>
-                <Post postText="This is new social network!"/>
+                {postData}
+                {/*<Post postText=""/>
+                <Post postText="This is new social network!"/>*/}
             </div>
         </div>
     )

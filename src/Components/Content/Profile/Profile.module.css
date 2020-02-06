@@ -54,9 +54,15 @@
 
 .postsBlock {
     grid-area: po;
-    background-color: white;
+    background-color: #d6d6d6;
     justify-self: center;
     width: 50%;
+}
+
+.textarea {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .block {
