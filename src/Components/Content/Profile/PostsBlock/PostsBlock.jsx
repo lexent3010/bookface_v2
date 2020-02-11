@@ -5,20 +5,26 @@ import Post from "./Post/Post";
 
 const PostsBlock = (props) => {
 
-    let posts = [
-        {id:1, postText:'Hello world!', likeCount:3},
-        {id:2, postText:'This is new social network!', likeCount:5}
-    ];
+    let newPostMessage = React.createRef();
+
+    let addPost = () => {
+        let text = newPostMessage.current.value;
+        props.newPost(text);
+    };
+
 
     let postData =
-        posts.map((p) => <Post id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
+        props.posts.map((p) => <Post id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
 
     return (
         <div className={s.postBlock}>
             <div className={s.textarea}>
-                <textarea name="" placeholder={"How are you?"} cols="66" rows="5"></textarea>
+                <textarea name="addPost"
+                          placeholder={"How are you?"}
+                          cols="66" rows="5"
+                          ref={newPostMessage}></textarea>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
             </div>
             <div>

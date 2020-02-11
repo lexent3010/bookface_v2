@@ -26,7 +26,9 @@ const Profile = (props) => {
                 <PhotoBlock/>
             </div>
             <div className={s.postsBlock + ' ' + s.block}>
-                <PostsBlock/>
+                <PostsBlock
+                    newPost={props.newPost}
+                    posts={props.state.posts} />
             </div>
         </div>
     )
