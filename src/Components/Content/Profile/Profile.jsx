@@ -28,7 +28,10 @@ const Profile = (props) => {
             <div className={s.postsBlock + ' ' + s.block}>
                 <PostsBlock
                     newPost={props.newPost}
-                    posts={props.state.posts} />
+                    posts={props.state.posts}
+                    newPostText={props.state.newPostText}
+                    updateNewPostText={props.updateNewPostText}
+                />
             </div>
         </div>
     )

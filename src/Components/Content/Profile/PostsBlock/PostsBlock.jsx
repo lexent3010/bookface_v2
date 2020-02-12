@@ -10,8 +10,13 @@ const PostsBlock = (props) => {
     let addPost = () => {
         let text = newPostMessage.current.value;
         props.newPost(text);
+        newPostMessage.current.value = '';
     };
 
+let onPostChange = () => {
+let text = newPostMessage.current.value;
+props.updateNewPostText(text)
+};
 
     let postData =
         props.posts.map((p) => <Post id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
@@ -22,7 +27,10 @@ const PostsBlock = (props) => {
                 <textarea name="addPost"
                           placeholder={"How are you?"}
                           cols="66" rows="5"
-                          ref={newPostMessage}></textarea>
+                          ref={newPostMessage}
+                value={props.newPostText}
+                          onChange={onPostChange}
+                />
                 <div>
                     <button onClick={addPost}>Add post</button>
                 </div>
