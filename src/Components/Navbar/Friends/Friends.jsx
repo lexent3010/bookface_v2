@@ -4,8 +4,10 @@ import Friend from "./Friend/Friend";
 
 const Friends = (props) => {
 
+    let state = props.store.getState();
+
     let usersData =
-        props.state.map(u => (<Friend id={u.id} avatar={u.avatar} name={u.name}/>));
+        state.users.map(u => (<Friend id={u.id} avatar={u.avatar} name={u.name}/>));
 
     return (
         <div className={s.friends}>

@@ -5,24 +5,29 @@ import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Content/Profile/Profile";
 import Footer from "./Components/Footer/Footer";
 import Background from "./Components/Background";
-import Messages from "./Components/Content/Messages/Messages";
+import Dialogs from "./Components/Content/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
 
 const App = (props) => {
     return (
         <div className="app">
             <Header/>
-            <Navbar state={props.state.users}/>
+            <Navbar
+                store={props.store}
+                /*state={props.state.users}*//>
             <div className="content">
                 <Route path='/profile' render={() =>
                     <Profile
-                        state={props.state.profilePage}
+                        store={props.store}
+                        /*state={props.state.profilePage}
                         newPost={props.newPost}
-                        updateNewPostText={props.updateNewPostText}
+                        updateNewPostText={props.updateNewPostText}*/
                     />}/>
                 <Route path='/dialogs' render={() =>
-                    <Messages
-                        state={props.state.dialogsPage}/>}/>
+                    <Dialogs
+                        store={props.store}
+                        /*state={props.state.dialogsPage}*/
+                    />}/>
             </div>
             <div className="background">
                 <Background/>
