@@ -13,20 +13,17 @@ const App = (props) => {
         <div className="app">
             <Header/>
             <Navbar
-                store={props.store}
-                /*state={props.state.users}*//>
+                state={props.state.users}/>
             <div className="content">
                 <Route path='/profile' render={() =>
                     <Profile
-                        store={props.store}
-                        /*state={props.state.profilePage}
-                        newPost={props.newPost}
-                        updateNewPostText={props.updateNewPostText}*/
+                        state={props.state.profilePage}
+                        addPost={props.addPost}
+                        updateNewPostText={props.updateNewPostText}
                     />}/>
                 <Route path='/dialogs' render={() =>
                     <Dialogs
-                        store={props.store}
-                        /*state={props.state.dialogsPage}*/
+                        state={props.state.dialogsPage}
                     />}/>
             </div>
             <div className="background">

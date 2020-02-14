@@ -7,7 +7,9 @@ import Friends from "./Friends/Friends";
 const Navbar = (props) => {
     return (
         <div className={s.navbar}>
-            <div className={s.background}></div>
+            <div className={s.background}>
+
+            </div>
             <div className={s.menu}>
                 <div><NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink></div>
                 <div><NavLink to='/dialogs' activeClassName={s.activeLink}>Messages</NavLink></div>
@@ -16,7 +18,7 @@ const Navbar = (props) => {
                 <div><NavLink to='/settings' activeClassName={s.activeLink}>Settings</NavLink></div>
                 <br/>
                 <div><NavLink to='/friends' activeClassName={s.activeLink}>Friends</NavLink></div>
-                <Friends store={props.store}/>
+                <Friends state={props.state}/>
             </div>
         </div>
     )

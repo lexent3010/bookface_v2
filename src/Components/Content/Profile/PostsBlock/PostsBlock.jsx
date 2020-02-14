@@ -5,23 +5,20 @@ import Post from "./Post/Post";
 
 const PostsBlock = (props) => {
 
-    let state = props.store.getState();
-
     let newPostMessage = React.createRef();
 
     let addPost = () => {
         let text = newPostMessage.current.value;
-        props.store.addPost(text);
-        /*newPostMessage.current.value = '';*/
+        props.addPost(text);
     };
 
 let onPostChange = () => {
 let text = newPostMessage.current.value;
-props.store.updateNewPostText(text)
+props.updateNewPostText(text)
 };
 
     let postData =
-        state.profilePage.posts.map((p) => <Post id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
+        props.posts.map((p) => <Post id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
 
     return (
         <div className={s.postBlock}>
@@ -30,7 +27,7 @@ props.store.updateNewPostText(text)
                           placeholder={"How are you?"}
                           cols="66" rows="5"
                           ref={newPostMessage}
-                value={state.profilePage.newPostText}
+                value={props.newPostText}
                           onChange={onPostChange}
                 />
                 <div>
@@ -39,8 +36,6 @@ props.store.updateNewPostText(text)
             </div>
             <div>
                 {postData}
-                {/*<Post postText=""/>
-                <Post postText="This is new social network!"/>*/}
             </div>
         </div>
     )
