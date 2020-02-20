@@ -1,4 +1,4 @@
-import s from "../Messages.module.css";
+import s from "../Dialogs.module.css";
 import React from "react";
 
 const MessageItem = (props) => {

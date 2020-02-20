@@ -6,6 +6,7 @@ import PostsBlock from "./PostsBlock/PostsBlock";
 import ProfileBlock from "./ProfileBlock/ProfileBlock";
 import ProfileImgBlock from "./ProfileImgBlock/ProfileImgBlock";
 import ProjectsBlock from "./ProjectBlock/ProjectsBlock";
+import PostsBlockContainer from "./PostsBlock/PostsBlockContainer";
 
 const Profile = (props) => {
     return (
@@ -26,12 +27,7 @@ const Profile = (props) => {
                 <PhotoBlock/>
             </div>
             <div className={s.postsBlock + ' ' + s.block}>
-                <PostsBlock
-                    addPost={props.addPost}
-                    posts={props.state.posts}
-                    newPostText={props.state.newPostText}
-                    updateNewPostText={props.updateNewPostText}
-                />
+                <PostsBlockContainer/>
             </div>
         </div>
     )

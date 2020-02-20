@@ -7,24 +7,18 @@ import Footer from "./Components/Footer/Footer";
 import Background from "./Components/Background";
 import Dialogs from "./Components/Content/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
+import DialogsContainer from "./Components/Content/Dialogs/DialogsContainer";
 
 const App = (props) => {
     return (
         <div className="app">
             <Header/>
-            <Navbar
-                state={props.state.users}/>
+            <Navbar/>
             <div className="content">
                 <Route path='/profile' render={() =>
-                    <Profile
-                        state={props.state.profilePage}
-                        addPost={props.addPost}
-                        updateNewPostText={props.updateNewPostText}
-                    />}/>
+                    <Profile/>}/>
                 <Route path='/dialogs' render={() =>
-                    <Dialogs
-                        state={props.state.dialogsPage}
-                    />}/>
+                    <DialogsContainer/>}/>
             </div>
             <div className="background">
                 <Background/>
