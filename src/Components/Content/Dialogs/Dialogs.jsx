@@ -17,10 +17,10 @@ const Dialogs = (props) => {
     };
 
     let dialogsData =
-        props.state.dialogs.map(d => <div className={s.dialogElement}><DialogItem id={d.id} name={d.name} avatar={d.avatar}/></div>);
+        props.state.dialogs.map(d => <div key={d.id} className={s.dialogElement}><DialogItem  id={d.id} name={d.name} avatar={d.avatar}/></div>);
 
     let messagesData =
-        props.state.messages.map(m => <div className={s.messageItem}><MessageItem id={m.id} message={m.message}/></div>);
+        props.state.messages.map(m => <div key={m.id} className={s.messageItem}><MessageItem id={m.id} message={m.message}/></div>);
 
     return (
         <div className={s.messagesPage}>

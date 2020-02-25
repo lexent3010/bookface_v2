@@ -8,6 +8,8 @@ import Background from "./Components/Background";
 import Dialogs from "./Components/Content/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
 import DialogsContainer from "./Components/Content/Dialogs/DialogsContainer";
+import UsersContainer from "./Components/Content/Users/UsersContainer";
+import FriendsContainer from "./Components/Content/Friends/FriendsContainer";
 
 const App = (props) => {
     return (
@@ -19,6 +21,10 @@ const App = (props) => {
                     <Profile/>}/>
                 <Route path='/dialogs' render={() =>
                     <DialogsContainer/>}/>
+                <Route path='/users' render={() =>
+                    <UsersContainer/>}/>
+                <Route path='/friends' render={() =>
+                    <FriendsContainer/>}/>
             </div>
             <div className="background">
                 <Background/>

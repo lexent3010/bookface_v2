@@ -18,7 +18,7 @@ const PostsBlock = (props) => {
     };
 
     let postData =
-        props.posts.map((p) => <Post id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
+        props.posts.map((p) => <Post key={p.id} id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
 
     return (
         <div className={s.postBlock}>

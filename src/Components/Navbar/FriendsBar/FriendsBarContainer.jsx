@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import Friends from "./Friends";
+import FriendsBar from "./FriendsBar";
 
 
 
@@ -14,6 +14,6 @@ let mapDispatchToProps = (dispatch) => {
     return {}
 };
 
-const FriendsContainer = connect(mapStateToProps, mapDispatchToProps)(Friends);
+const FriendsBarContainer = connect(mapStateToProps, mapDispatchToProps)(FriendsBar);
 
-export default FriendsContainer;
+export default FriendsBarContainer;
