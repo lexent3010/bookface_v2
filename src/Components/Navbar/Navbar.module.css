@@ -2,14 +2,18 @@
     grid-area: n;
     background-color: #343434;
     display: grid;
-    grid-template-columns: 8fr 2fr;
+    grid-template-columns: 5fr 4fr;
+    padding: 0 10px 0 10px;
 }
 
 .menu {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .menu a {
     text-decoration: none;
     color: white;
+}
+.menu a.activeLink {
+    color: gold;
 }

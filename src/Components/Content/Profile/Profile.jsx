@@ -6,6 +6,8 @@ import PostsBlock from "./PostsBlock/PostsBlock";
 import ProfileBlock from "./ProfileBlock/ProfileBlock";
 import ProfileImgBlock from "./ProfileImgBlock/ProfileImgBlock";
 import ProjectsBlock from "./ProjectBlock/ProjectsBlock";
+import PostsBlockContainer from "./PostsBlock/PostsBlockContainer";
+import ProfileBlockContainer from "./ProfileBlock/ProfileBlockContainer";
 
 const Profile = (props) => {
     return (
@@ -17,7 +19,7 @@ const Profile = (props) => {
                 <AvatarBlock/>
             </div>
             <div className={s.profileBlock + ' ' + s.block}>
-                <ProfileBlock/>
+                <ProfileBlockContainer/>
             </div>
             <div className={s.projectsBlock + ' ' + s.block}>
                 <ProjectsBlock/>
@@ -26,7 +28,7 @@ const Profile = (props) => {
                 <PhotoBlock/>
             </div>
             <div className={s.postsBlock + ' ' + s.block}>
-                <PostsBlock/>
+                <PostsBlockContainer/>
             </div>
         </div>
     )

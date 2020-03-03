@@ -1,0 +1,39 @@
+.messagesPage {
+    height: 800px;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogs {
+    padding: 0 10px 10px 10px;
+    display: grid;
+    grid-template-rows: 70px 70px 70px;
+}
+
+.messages {
+    padding: 0 10px 10px 10px;
+    display: grid;
+    grid-template-rows: 70px 70px 70px 70px 70px 70px;
+}
+
+.dialogItem img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.messageItem {
+border-bottom: 1px solid black;
+    padding-top: 20px;
+}
+
+.dialogElement {
+    border-bottom: 1px solid ;
+    padding-top: 10px;
+}
+
+.dialogItem a {
+    list-style: none;
+    text-decoration: none;
+}
+

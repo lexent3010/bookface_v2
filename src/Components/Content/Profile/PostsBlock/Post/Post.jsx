@@ -1,15 +1,19 @@
 import React from 'react';
 import Avatar from "../../AvatarBlock/Avatar/Avatar";
+import s from './Post.module.css'
 
 
 const Post = (props) => {
     return (
-        <div>
+        <div className={s.post}>
             <div>
                 <Avatar/>
             </div>
-            <div>
+            <div className={s.text}>
                 {props.postText}
+            </div>
+            <div>
+                Like: {props.likeCount}
             </div>
         </div>
     )

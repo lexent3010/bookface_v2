@@ -1,0 +1,25 @@
+.post {
+    border: 1px solid #d6d6d6;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 10px 0 10px 0;
+    background-color: white;
+}
+
+.text {
+    border: 1px solid #d6d6d6;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+}
+.text::before, .text::after {
+    content: '';
+    position: absolute;
+    left: 230px; top: -20px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #d6d6d6;
+}
+.text::after {
+    border-bottom: 10px solid white;
+    top: -19px;
+}
