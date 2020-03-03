@@ -1,25 +1,27 @@
 import React from 'react';
-import s from './Friends.module.css'
+import s from './Users.module.css'
+import *as axios from 'axios'
 import userPhoto from '../../../img/user.png'
 
-const Friends = (props) => {
+const OldUsers2 = (props) => {
+    if (props.users.length === 0) {
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                props.setUsers(response.data.items)})
+    }
+
     return (
         <div>
             {
-                props.users.filter(u => u.followed === true)
-                    .map(u => <div key={u.id} className={s.followed}>
+                props.users.map(u => <div key={u.id} className={s.userItem}>
                     <div className={s.avatarBlock}>
                         <div className={s.userAvatar}>
                             <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="avatar"/>
                         </div>
                         <div className={s.followButton}>
                             {u.followed
-                                ? <button onClick={() => {
-                                    props.unfollow(u.id)
-                                }}>Remove</button>
-                                : <button onClick={() => {
-                                    props.follow(u.id)
-                                }}>Add</button>}
+                                ? <button onClick={() => {props.unfollow(u.id)}}>Remove</button>
+                                : <button onClick={() => {props.follow(u.id)}}>Add</button>}
                         </div>
                     </div>
                     <div className={s.infoBlock}>
@@ -39,4 +41,4 @@ const Friends = (props) => {
     )
 };
 
-export default Friends;
+export default OldUsers2;
