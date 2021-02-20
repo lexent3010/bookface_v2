@@ -6,20 +6,23 @@ import PostsBlock from "./PostsBlock/PostsBlock";
 import ProfileBlock from "./ProfileBlock/ProfileBlock";
 import ProfileImgBlock from "./ProfileImgBlock/ProfileImgBlock";
 import ProjectsBlock from "./ProjectBlock/ProjectsBlock";
-import PostsBlockContainer from "./PostsBlock/PostsBlockContainer";
-import ProfileBlockContainer from "./ProfileBlock/ProfileBlockContainer";
+import Preloader from "../../Common/Preloader/Preloader";
+import {updateUserStatus} from "../../../redux/profilePageReducer";
 
 const Profile = (props) => {
+    if (!props.profile) {
+        return <Preloader/>
+    }
     return (
         <div className={s.profilePage}>
             <div className={s.profileImgBlock}>
-               <ProfileImgBlock/>
+                <ProfileImgBlock/>
             </div>
             <div className={s.avatarBlock + ' ' + s.block}>
-                <AvatarBlock/>
+                <AvatarBlock avatar={props.profile.photos.large} name={props.profile.fullName}/>
             </div>
             <div className={s.profileBlock + ' ' + s.block}>
-                <ProfileBlockContainer/>
+                <ProfileBlock profile={props.profile.aboutMe} status={props.status} updateUserStatus={props.updateUserStatus}/>
             </div>
             <div className={s.projectsBlock + ' ' + s.block}>
                 <ProjectsBlock/>
@@ -28,10 +31,12 @@ const Profile = (props) => {
                 <PhotoBlock/>
             </div>
             <div className={s.postsBlock + ' ' + s.block}>
-                <PostsBlockContainer/>
+                <PostsBlock addPost={props.addPost} updateNewPostText={props.updateNewPostText} posts={props.posts}
+                            newPostText={props.newPostText}
+                            avatar={props.profile.photos.large}/>
             </div>
         </div>
     )
 };
-/*{s.profilePage}*/
+
 export default Profile;

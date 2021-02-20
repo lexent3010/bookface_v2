@@ -1,10 +1,15 @@
+* {
+
+}
+
 .app {
     margin: 0 auto;
     display: grid;
     grid-template-areas: "h h h" "n c b" "f f f";
     grid-template-rows: 60px 10fr 60px;
     grid-template-columns: 4fr 10fr 4fr;
-    /*grid-gap: 10px;*/
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 .content {
@@ -15,4 +20,8 @@
 .background {
     grid-area: b;
     background-color: #343434;
+}
+
+#preloaderImg {
+    background: transparent;
 }

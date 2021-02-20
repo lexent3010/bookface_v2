@@ -7,7 +7,7 @@ const Post = (props) => {
     return (
         <div className={s.post}>
             <div>
-                <Avatar/>
+                <Avatar avatar={props.avatar}/>
             </div>
             <div className={s.text}>
                 {props.postText}

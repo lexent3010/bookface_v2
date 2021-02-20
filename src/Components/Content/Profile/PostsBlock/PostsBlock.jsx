@@ -1,8 +1,6 @@
 import React from 'react';
 import s from "../Profile.module.css";
 import Post from "./Post/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../../redux/profilePageReducer";
-
 
 const PostsBlock = (props) => {
 
@@ -18,7 +16,7 @@ const PostsBlock = (props) => {
     };
 
     let postData =
-        props.posts.map((p) => <Post key={p.id} id={p.id} postText={p.postText} likeCount={p.likeCount}/>);
+        props.posts.map((p) => <Post key={p.id} id={p.id} postText={p.postText} likeCount={p.likeCount} avatar={props.avatar}/>);
 
     return (
         <div className={s.postBlock}>

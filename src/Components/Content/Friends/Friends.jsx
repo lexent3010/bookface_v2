@@ -5,9 +5,8 @@ import userPhoto from '../../../img/user.png'
 const Friends = (props) => {
     return (
         <div>
-            {
-                props.users.filter(u => u.followed === true)
-                    .map(u => <div key={u.id} className={s.followed}>
+            {props.users.filter(u => u.followed === true)
+                .map(u => <div key={u.id} className={s.followed}>
                     <div className={s.avatarBlock}>
                         <div className={s.userAvatar}>
                             <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="avatar"/>
@@ -33,8 +32,7 @@ const Friends = (props) => {
                             {'u.location.city'}, {'u.location.country'}
                         </div>
                     </div>
-                </div>)
-            }
+                </div>)}
         </div>
     )
 };

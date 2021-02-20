@@ -7,10 +7,10 @@ const AvatarBlock = (props) => {
     return (
         <div>
             <div className={s.avatar}>
-                <Avatar/>
+                <Avatar avatar={props.avatar}/>
             </div>
             <div className={s.name}>
-                Ilya Axakov
+                {/*Ilya Axakov*/}{props.name}
             </div>
         </div>
     )

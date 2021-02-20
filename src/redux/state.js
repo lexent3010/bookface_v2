@@ -60,31 +60,7 @@ let store = {
 
         this._callSubscriber(this._state);
     }
-    /*if (action.type === ADD_POST) {
-        let newPost = {
-            id: 3,
-            postText: this._state.profilePage.newPostText,
-            likeCount: 0
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-        this._state.profilePage.newPostText = action.newPostText;
-        this._callSubscriber(this._state);
-    } else if (action.type === SEND_MESSAGE) {
-        let newMessage = {
-            id: 4,
-            message: this._state.dialogsPage.newMessageText,
-        };
-        this._state.dialogsPage.messages.push(newMessage);
-        this._state.dialogsPage.newMessageText = 'q';
-        this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-        this._state.dialogsPage.newMessageText = action.newMessageText;
-        this._callSubscriber(this._state);
-    }
-  }*/
+
 
 };
 
