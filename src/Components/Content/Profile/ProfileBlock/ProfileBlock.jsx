@@ -52,8 +52,3 @@ class ProfileBlock extends React.Component {
 }
 
 export default ProfileBlock;
-
-/*let profileInfo = props.profileInfo.map(i => <ProfileInfo key={i.id} id={i.id} position={i.position}
-                                                             responsibility={i.responsibility}
-                                                             telephoneNumber={i.telephoneNumber}
-                                                             dateOfEmployment={i.dateOfEmployment}/>);*/

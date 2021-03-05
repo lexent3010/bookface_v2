@@ -6,6 +6,8 @@ type ImpotantFriendsType = {
     avatar: string
 }
 
+type ActionsTypes = {}
+
 let initialState = {
     navBar: [
         {id: 1, name: 'Pashok', avatar: 'https://i.ibb.co/HxhbGXP/Zoidberg-rev.jpg'},
@@ -14,7 +16,7 @@ let initialState = {
     ] as Array<ImpotantFriendsType>
 };
 
-const navBarReducer = (state = initialState, action: any): InitialStateType => {
+const navBarReducer = (state = initialState, action: ActionsTypes): InitialStateType => {
 
 return state;
 };

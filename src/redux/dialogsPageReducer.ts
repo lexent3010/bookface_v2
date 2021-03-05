@@ -26,7 +26,9 @@ let initialState = {
     newMessageText: ''
 };
 
-const dialogsPageReducer = (state = initialState, action: any): InitialStateType => {
+type ActionsTypes = SendMessage | UpdateNewMessageText
+
+const dialogsPageReducer = (state = initialState, action: ActionsTypes): InitialStateType => {
     let stateCopy;
     switch (action.type) {
         case SEND_MESSAGE:
