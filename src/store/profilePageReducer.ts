@@ -1,11 +1,13 @@
 import {profileAPI} from "../api/api";
 import { ThunkAction } from "redux-thunk";
 import { AppStateType } from "./reduxStore";
+import { type } from "node:os";
 
-const ADD_POST = 'ADD_POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
-const SET_PROFILE = 'SET_PROFILE';
-const SET_STATUS = 'SET_STATUS';
+const ADD_POST = 'profile/ADD_POST';
+const DELETE_POST = "profile/DELETE_POST";
+const UPDATE_NEW_POST_TEXT = "profile/UPDATE_NEW_POST_TEXT";
+const SET_PROFILE = "profile/SET_PROFILE";
+const SET_STATUS = "profile/SET_STATUS";
 
 type InitialStateTypes = typeof initialState
  export type PostType = {
@@ -66,19 +68,27 @@ let initialState = {
     status: null as string | null
 };
 
-type ActionsTypes = AddPostType | UpdateNewPostTest | SetProfile | SetUserStatus
+type ActionsTypes =
+  | AddPostType
+  | UpdateNewPostTest
+  | SetProfile
+  | SetUserStatus
+  | DeletePostType;
 
 const profilePageReducer = (state = initialState, action: ActionsTypes): InitialStateTypes => {
     let stateCopy;
     switch (action.type) {
         case ADD_POST: {
-            let newPost = state.newPostText;
-            stateCopy = {
+            return {
                 ...state,
-                posts: [{id: 3, postText: newPost, likeCount: 0}, ...state.posts],
+                posts: [{id: 3, postText: state.newPostText, likeCount: 0}, ...state.posts],
                 newPostText: ''
             };
-            return stateCopy;
+        }
+        case DELETE_POST: {
+            return {
+                ...state, posts: state.posts.filter(post => post.id !== action.postId)
+            }
         }
         case UPDATE_NEW_POST_TEXT:
             return {...state, newPostText: action.newPostText};
@@ -96,10 +106,18 @@ type AddPostType = {
 }
 export const addPost = (): AddPostType => ({type: ADD_POST});
 
+type DeletePostType = {
+    type: typeof DELETE_POST
+    postId: number
+}
+
+export const deletePost = (postId: number): DeletePostType => ({type: DELETE_POST, postId}) 
+
 type UpdateNewPostTest = {
     type: typeof UPDATE_NEW_POST_TEXT
     newPostText: string
 }
+
 export const updateNewPostText = (newPostText: string): UpdateNewPostTest => ({
     type: UPDATE_NEW_POST_TEXT,
     newPostText

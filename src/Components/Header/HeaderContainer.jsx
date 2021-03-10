@@ -1,29 +1,22 @@
-import React from 'react';
+import React from "react";
 import Header from "./Header";
-import {connect} from "react-redux";
-import { getMe, deleteAuthUserData } from "../../redux/authReducer";
-import {authAPI} from "../../api/api";
+import { connect } from "react-redux";
+import { deleteAuthUserData } from "../../store/authReducer";
+import { authAPI } from "../../api/api";
 
 class HeaderContainer extends React.Component {
-    componentDidMount() {
-        this.props.getMe()
-    }
-
-    render() {
-        return <Header {...this.props}/>
-    }
+  render() {
+    return <Header {...this.props} />;
+  }
 }
 
 const mapStateToProps = (state) => {
-    return {
-        /*id: state.auth.id,*/
-        login: state.auth.login,
-        /*email: state.auth.email,*/
-        isLogin: state.auth.isLogin,
-        authAPI: authAPI
-    }
+  return {
+    login: state.auth.login,
+    isLogin: state.auth.isLogin,
+  };
 };
 
-export default connect(mapStateToProps, { getMe, deleteAuthUserData })(
+export default connect(mapStateToProps, { deleteAuthUserData })(
   HeaderContainer
 );

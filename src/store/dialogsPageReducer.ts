@@ -1,5 +1,5 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const SEND_MESSAGE = 'dialog/SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = "dialog/UPDATE-NEW-MESSAGE-TEXT";
 
 type InitialStateType = typeof initialState
 type DialogType = {

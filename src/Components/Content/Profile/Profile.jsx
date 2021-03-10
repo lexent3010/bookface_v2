@@ -7,7 +7,7 @@ import ProfileBlock from "./ProfileBlock/ProfileBlock";
 import ProfileImgBlock from "./ProfileImgBlock/ProfileImgBlock";
 import ProjectsBlock from "./ProjectBlock/ProjectsBlock";
 import Preloader from "../../Common/Preloader/Preloader";
-import {updateUserStatus} from "../../../redux/profilePageReducer";
+import {updateUserStatus} from "../../../store/profilePageReducer";
 
 const Profile = (props) => {
     if (!props.profile) {

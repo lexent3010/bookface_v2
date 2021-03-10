@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Login from "../Components/Login/Login";
+import { Redirect } from "react-router-dom";
 import s from "../Components/Common/FormsControls/FormsControl.module.css";
 
 const mapStateToPropsForRedirect = (state) => {
@@ -12,7 +12,7 @@ const mapStateToPropsForRedirect = (state) => {
 export const withRedirect = (Component) => {
   const createRedirectContainerComponent = (props) => {
     if (!props.isLogin) {
-      return <Login />;
+      return <Redirect to={"/login"} />;
     }
     return <Component {...props} />;
   };

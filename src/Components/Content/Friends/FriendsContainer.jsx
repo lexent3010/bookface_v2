@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {follow, setUsers, unfollow} from "../../../redux/usersReducer";
+import {follow, setUsers, unfollow} from "../../../store/usersReducer";
 import Friends from "./Friends";
 
 let mapStateToProps = (state) => {

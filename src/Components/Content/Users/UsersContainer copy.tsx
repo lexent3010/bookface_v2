@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
+import Users from "./Users";
 import {
   follow,
   getUsers,
@@ -17,8 +18,6 @@ import {
   getIsLoadSelector,
   getCurrentPageSelector,
 } from "../../../store/selectors/usersSelector";
-import Paginator from "../../Common/Paginator/Paginator";
-import User from "./User";
 
 type MapStatePropsType = {
   users: Array<UserType>;
@@ -44,29 +43,34 @@ export type PropsTypes = MapStatePropsType &
   MapDispatchPropsType &
   OwnPropsType;
 
-const Users: React.FC<PropsTypes> = (props) => {
-  useEffect(() => {
-    props.getUsers(props.currentPage, props.pageSize);
-  }, [props.totalUsersCount]
-)
+class UsersContainer extends React.Component<PropsTypes> {
+  componentDidMount() {
+    this.props.getUsers(this.props.currentPage, this.props.pageSize);
+  }
 
-  const onPageChanged = (pageNumber: number) => {
-    props.getUsers(pageNumber, props.pageSize);
-    props.setCurrentPage(pageNumber);
+  onPageChanged = (pageNumber: number) => {
+    this.props.getUsers(pageNumber, this.props.pageSize);
+    this.props.setCurrentPage(pageNumber);
   };
 
+  render() {
     return (
       <>
-        {props.isLoad && <Preloader />}
-        <Paginator onPageChanged={onPageChanged} totalUsersCount={props.totalUsersCount} pageSize={props.pageSize}
-      currentPage={props.currentPage}/>
-      {props.users
-        .filter((u: any) => u.photos.small != null && u.photos.large != null)
-        .map(u => <User key={u.id} user={u} follow={props.follow} unfollow={props.unfollow}/>
-        )}
+        {this.props.isLoad && <Preloader />}
+        <Users
+          pageSize={this.props.pageSize}
+          totalUsersCount={this.props.totalUsersCount}
+          currentPage={this.props.currentPage}
+          users={this.props.users}
+          onPageChanged={this.onPageChanged}
+          follow={this.props.follow}
+          unfollow={this.props.unfollow}
+          usersAPI={this.props.usersAPI}
+        />
       </>
     );
   }
+}
 
 let mapStateToProps = (state: AppStateType): MapStatePropsType => {
   return {
@@ -89,4 +93,4 @@ export default connect<
   unfollow,
   setCurrentPage,
   getUsers,
-})(Users);
+})(UsersContainer);

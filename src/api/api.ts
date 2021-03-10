@@ -1,4 +1,5 @@
 import axios from "axios";
+import { SubmiteAuthDataTypes } from "../common/types/types";
 
 const instance = axios.create({
   withCredentials: true,
@@ -50,19 +51,25 @@ type LoginType = {
   data: { userId: number };
 };
 
+type CaptchaType = {
+  url: string;
+};
+
 export const authAPI = {
   getMe() {
-    return instance
-      .get<MeResponseTypes>("auth/me")
-      .then((response) => response.data);
+    return instance.get<MeResponseTypes>("auth/me").then((res) => res.data);
   },
-  login(email: string, password: number, rememberMe: boolean) {
-    console.log(email, password, rememberMe);
+  login(data: SubmiteAuthDataTypes) {
     return instance
-      .post<LoginType>("auth/login", {email, password, rememberMe})
-      .then((response) => response.data);
+      .post<LoginType>("auth/login", { ...data })
+      .then((res) => res.data);
   },
   logout() {
-    return instance.delete("auth/login").then((response) => response.data);
+    return instance.delete("auth/login").then((res) => res.data);
+  },
+  getCaptchaUrl() {
+    return instance
+      .get<CaptchaType>("/security/get-captcha-url")
+      .then((res) => res.data);
   },
 };

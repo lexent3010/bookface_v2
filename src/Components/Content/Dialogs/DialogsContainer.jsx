@@ -1,8 +1,8 @@
 import React from 'react';
-import {sendMessage, updateNewMessageText} from "../../../redux/dialogsPageReducer";
+import {sendMessage, updateNewMessageText} from "../../../store/dialogsPageReducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
-import {withRedirect} from "../../../hoc/HOCs";
+import {withRedirect} from "../../../utils/HOCs";
 import {compose} from "redux";
 
 
